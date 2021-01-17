@@ -1,166 +1,175 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Staatliches&display=swap");
+
+body {
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+}
+
 body header {
   height: 100vh;
-  background: url("https://fluxick.github.io/overcoffee/img/background.jpg");
-}
-body header .container {
-  max-width: 1170px;
+  background: url("https://fluxick.github.io/overcoffee/img/background.jpg") no-repeat center center;
+  max-width: 1920px;
   margin: auto;
-}
-body header .container .inner_header {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 35px;
   position: relative;
   overflow: hidden;
 }
-body header .container .inner_header.active > h1 {
-  transform: translate(-250%, 45%);
+
+.container {
+  width: 1170px;
+  margin: auto;
 }
-body header .container .inner_header.active nav {
-  transform: translateX(-500%);
-}
-body header .container .inner_header.active nav button:hover .arrow {
-  transform: scaleX(-1) translateX(-5px);
-}
-body header .container .inner_header.active nav button .arrow {
-  transform: scaleX(-1);
-}
-body header .container .inner_header > img {
-  z-index: 3;
-}
-body header .container .inner_header > h1 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 45%);
-  color: white;
-  font-size: 72px;
-  font-weight: 500;
-  font-family: "Montserrat Alternates", sans-serif;
-  transition: 0.7s linear;
-  z-index: 2;
-}
-body header .container .inner_header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  position: relative;
-  transition: 0.7s linear;
-}
-body header .container .inner_header nav button {
-  background: none;
-  display: flex;
-  align-items: center;
-  margin-top: 12px;
-}
-body header .container .inner_header nav button.opening:hover span:after,
-body header .container .inner_header nav button.opening:hover span:before {
-  height: 0;
-}
-body header .container .inner_header nav button.opening:hover span {
-  border: none;
-}
-body header .container .inner_header nav button:hover span {
-  cursor: pointer;
-  border-bottom: 0.5px solid white;
-}
-body header .container .inner_header nav button:hover span:after,
-body header .container .inner_header nav button:hover span:before {
-  visibility: visible;
-  bottom: 0px;
-}
-body header .container .inner_header nav button:hover .arrow {
-  transform: translateX(-5px);
-  cursor: pointer;
-}
-body header .container .inner_header nav button .arrow {
-  transition: 0.15s linear;
-  margin-top: 5px;
-  width: 40px;
-  height: 40px;
-  background: url("https://fluxick/overcoffee/ab6477b0c18d96f3496ecefa2c6cd401e9ac29c4/img/arrow.svg");
-}
-body header .container .inner_header nav button span {
-  position: relative;
-  color: white;
-  font-size: 36px;
-  font-weight: 500;
-  font-family: "Montserrat", sans-serif;
-  margin-left: 10px;
-  transition: all 0.15s linear;
-  display: block;
-}
-body header .container .inner_header nav button span:after, body header .container .inner_header nav button span:before {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 100%;
-  position: absolute;
-  background: white;
-  right: 0;
-  bottom: -15px;
-  visibility: hidden;
-  transition: 0.1s linear;
-}
-body header .container .inner_header nav button span:before {
-  transition-delay: 0.05s;
-}
-body header .container .inner_header nav .nav_menu {
-  position: absolute;
-  display: flex;
-  left: 100%;
-  margin-top: 10px;
-}
-body header .container .inner_header nav .nav_menu a {
-  margin-left: 30px;
-  font-size: 36px;
-  font-weight: 500;
-  font-family: "Montserrat", sans-serif;
-  color: white;
-  transition: 0.1s linear;
-}
-body header .container .inner_header nav .nav_menu a:hover {
-  cursor: pointer;
-  color: #db8b22;
-}
-body header .container .intro {
+
+.inner_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  max-width: 1170px;
-  width: 100%;
-  top: 50%;
-  transform: translate(0, -50%);
+  padding-top: 35px;
 }
-body header .container .intro .inner_intro {
-  text-align-last: left;
-  font-family: "Roboto Mono", sans-serif;
+
+.inner_header h1 {
+  font-family: "Montserrat Alternates";
+  font-size: 72px;
+  font-weight: 500;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+  background: url("https://fluxick.github.io/overcoffee/img/logo.svg") no-repeat center center;
+
+}
+
+#menu_button {
+  background: none;
+  color: white;
+  font-family: "Montserrat";
+  font-size: 36px;
+  font-weight: 500;
+  position: relative;
+  transition: .3s linear;
+}
+
+#menu_button:after,
+#menu_button:before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: white;
+  bottom: -15px;
+  visibility: hidden;
+  transition: .05s ease-out;
+}
+
+#menu_button:hover {
+  cursor: pointer;
+  border-bottom: 1px solid white;
+}
+
+#menu_button:hover:after,
+#menu_button:hover:before {
+  visibility: visible;
+  bottom: 0;
+}
+
+#menu_button:hover:before {
+  transition-delay: .1s;
+}
+
+#menu_button.hidden {
+  transform: translateY(-110px);
+}
+
+nav {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  transform: translateX(100%);
+  transition: .3s ease-in-out;
+}
+
+nav.active {
+  transform: translateX(0);
+}
+
+nav a {
+  font-size: 36px;
+  font-family: "Roboto Mono";
   font-weight: 500;
   color: white;
+  margin: 15px 15px;
+  transition: color .1s linear;
 }
-body header .container .intro .inner_intro h3 {
+
+nav a:hover {
+  color: #f89626
+}
+
+nav button {
+  position: absolute;
+  top: 67px;
+  left: 15px;
+  transform: scale(-1);
+  background: white;
+  height: 40px;
+  width: 34px;
+  background: url('https://fluxick.github.io/overcoffee/img/arrow.png');
+  transition: .1s linear;
+}
+
+nav button:hover {
+  cursor: pointer;
+  filter: drop-shadow(3px 0 1px rgba(187, 44, 44, 0.5))
+}
+
+.intro {
+  height: 100%;
+}
+
+.inner_intro {
+  position: absolute;
+  bottom: 50%;
+  transform: translate(0, 50%);
+}
+
+.inner_intro h3 {
   font-size: 64px;
+  font-weight: 500;
+  font-family: "Roboto Mono";
 }
-body header .container .intro .inner_intro p {
-  max-width: 450px;
-  font-size: 20px;
+
+.inner_intro p {
+  width: 400px;
   margin: 25px 0;
+  font-weight: 500;
+  font-style: 24px;
+  font-family: "Roboto Mono";
 }
-body header .container .intro .inner_intro button {
-  background: orange;
-  font-family: "Staatliches", sans-serif;
-  font-size: 48px;
+
+.inner_intro button {
+  background: #ff9900;
+  box-shadow: inset 1px 1px 15px #ff0000;
   color: #9b4444;
-  padding: 5px 100px;
+  font-size: 48px;
+  font-family: "Staatliches";
+  padding: 0 90px;
   border-radius: 10px;
-  box-shadow: inset 5px 5px 10px rgba(255, 0, 0, 0.5);
-  transition: 0.15s linear;
+  transition: .1s linear;
 }
-body header .container .intro .inner_intro button:hover {
-  background: #9b0a0a;
-  color: white;
-  box-shadow: inset 1px 1px 10px #2a0101;
+
+.inner_intro button:hover {
+  box-shadow: none;
+  filter: drop-shadow(0 0 5px #ff0000);
   cursor: pointer;
 }

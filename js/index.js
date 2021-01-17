@@ -1,3 +1,1 @@
-const menuBtn = document.querySelector('nav>button');
-
-menuBtn.addEventListener('click', open)
+menuBtb.addEventListener('click', menuBtnListener)
